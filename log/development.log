@@ -313,3 +313,35 @@ Processing by ArticlesController#show as HTML
   Parameters: {"id"=>"1"}
   [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
   Rendered articles/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/1/edit" for 74.72.136.93 at 2018-10-21 19:34:53 +0000
+Cannot render console from 74.72.136.93! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered articles/_form.html.erb (2.8ms)
+  Rendered articles/edit.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 67ms (Views: 66.0ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/articles/1" for 74.72.136.93 at 2018-10-21 19:35:02 +0000
+Cannot render console from 74.72.136.93! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"12+fBPMCthxTvt9zRZEMNRPf+AdgQ5TGs11yqGry2Q+kfqbn2EUlhr335U2e12ftnAOMEt+iJsn7cmIRijEXgg==", "article"=>{"title"=>"new article", "body"=>"some text. some more text"}, "commit"=>"Update Article", "id"=>"1"}
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "articles" SET "body" = ?, "updated_at" = ? WHERE "articles"."id" = ?  [["body", "some text. some more text"], ["updated_at", "2018-10-21 19:35:02.085206"], ["id", 1]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://67.205.182.198:40992/articles/1
+Completed 302 Found in 8ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/articles/1" for 74.72.136.93 at 2018-10-21 19:35:02 +0000
+Cannot render console from 74.72.136.93! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered articles/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.2ms)
